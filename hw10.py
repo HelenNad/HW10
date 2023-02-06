@@ -4,12 +4,12 @@ class Field:
     def __init__(self):
         return self.value 
        
-class Name:
-    def __init__(self, name):
-        self.value = name
+class Name(Field):
+    
+    value = ""
     
 
-class Phone:
+class Phone(Field):
     value = []
     def phone (self, phone):
         Phone.value.append(phone)
@@ -17,9 +17,9 @@ class Phone:
 
 class Record (Name, Phone):
 
-    def __init__(self,name, phone):
-        self.name = name
-        self.phones = phone
+    def __init__(self):
+        self.name = Name.value
+        self.phones = Phone.value
 
     def name(self):
         return Name.value
@@ -28,7 +28,7 @@ class Record (Name, Phone):
         return Phone.value
 
     def add_phone (self,phone):
-        self.phones.append(phone) 
+        self.phone.value.append(phone) 
 
         
     def chenge_phone (self, phone, ph):
